@@ -22,15 +22,10 @@ app.post('/calculate-bmi', (req, res) => {
     else category = 'Obese';
     res.send(`
     <h3>Your BMI: ${bmi.toFixed(2)}</h3>
-    <p>Category: <strong style="color: ${getColor(category)};">${category}</strong></p>
+    <p>Category: <strong>${category}</strong></p>
     <a href="/">Go back</a>
   `);
 });
-function getColor(category) {
-    if (category === 'Normal') return 'green';
-    if (category === 'Overweight') return 'yellow';
-    return 'red';
-}
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 });
